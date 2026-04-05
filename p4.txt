@@ -1,0 +1,7 @@
+0 Illumination
+1 TousPourUn
+0 PetitVoleur
+1 Fleche
+0 Esquive
+1 Fleche
+0 Fouette

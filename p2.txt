@@ -1,0 +1,6 @@
+0 Illumination
+1 Fleche
+0 Esquive
+0 Fouette
+1 CoupDroit
+1 Vitesse
