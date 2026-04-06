@@ -39,6 +39,7 @@ public class Inspiration extends Carte {
 
     /**
      * Retire une carte jouée dans la main du joueur courant
+     * 
      * @param jc joueur courant, celui qui joue la carte
      */
     @Override

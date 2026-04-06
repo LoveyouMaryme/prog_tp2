@@ -12,6 +12,7 @@ public class Esquive extends CarteRiposte {
 
     /**
      * Construit une carte « Esquive »
+     *
      * @param idJoueur ID du joueur qui l'utilise
      */
     public Esquive(int idJoueur) {
