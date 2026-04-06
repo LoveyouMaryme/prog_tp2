@@ -11,7 +11,12 @@ public abstract class CarteDommage extends Carte {
 
     @Override
     public boolean verifier(Joueur jc, Joueur ja) {
-        return jc.m > 0;
+
+        if (jc.m <= 0) {
+            this.raisonEchec = Mssg.CARTES_MAIN;
+            return false;
+        }
+        return true;
     }
 
     @Override
