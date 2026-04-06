@@ -34,12 +34,12 @@ public abstract class CarteExperience extends Carte {
      */
     @Override
     public boolean verifier(Joueur jc, Joueur ja) {
-
+        boolean valide = true;
         if (jc.m <= 0) {
             this.raisonEchec = Mssg.CARTES_MAIN;
-            return false;
+            valide = false;
         }
-        return true;
+        return valide;
     }
 
     /**

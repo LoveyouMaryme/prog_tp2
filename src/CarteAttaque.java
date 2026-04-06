@@ -30,16 +30,15 @@ public abstract class CarteAttaque extends Carte {
      */
     @Override
     public boolean verifier(Joueur jc, Joueur ja) {
-        //regle commune: main > 0 et pts attaque > 0
+        boolean valide = true;
         if (jc.m <= 0) {
             this.raisonEchec = Mssg.CARTES_MAIN;
-            return false;
-        }
-        if (jc.a <= 0) {
+            valide = false;
+        } else if (jc.a <= 0) {
             this.raisonEchec = Mssg.POINT_ATTAQUE;
-            return false;
+            valide = false;
         }
-        return true;
+        return valide;
     }
 
     /**
