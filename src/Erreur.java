@@ -21,6 +21,7 @@ public enum Erreur {
 
     /**
      * Construit un message d'erreur
+     *
      * @param mssg message d'erreur
      * @param no numero de l'erreur
      */
