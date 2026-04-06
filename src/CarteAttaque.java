@@ -12,6 +12,7 @@ public abstract class CarteAttaque extends Carte {
 
     /**
      * Construit une carte de type Attaque
+     *
      * @param nom nom de la carte
      * @param idJoueur Id du joueur qui utilise cette carte
      */
@@ -58,6 +59,7 @@ public abstract class CarteAttaque extends Carte {
 
     /**
      * Valide que la carte est bel et bien une d'attaque
+     *
      * @return true si la carte est de type Attaque sinon, false
      */
     @Override

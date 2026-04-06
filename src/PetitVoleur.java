@@ -32,6 +32,7 @@ public class PetitVoleur extends CarteAttaque {
     /**
      * Applique les effets de premier type :
      * Augmente le nombre d'expériences du joueur ciblé d'un point
+     *
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
      * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées

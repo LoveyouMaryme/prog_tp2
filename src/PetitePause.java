@@ -38,6 +38,7 @@ public class PetitePause extends CarteAttaque {
 
     /**
      * Applique les effets de premier type :
+     *
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
      * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées

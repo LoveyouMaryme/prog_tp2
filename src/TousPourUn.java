@@ -4,7 +4,10 @@ import java.util.Deque;
 /**
  * Représente la carte d'attaque « TousPourUn ».
  *
- * Augmente d'un point le nombre de cartes en main pour les deux joeuurs
+ * Augmente d'un point le nombre de cartes en main pour les deux joueurs
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class TousPourUn extends CarteAttaque {
 
@@ -38,8 +41,6 @@ public class TousPourUn extends CarteAttaque {
      * @param pile      la pile de cartes jouées
      * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées
      *
-     * Auteur : Love-Mary Victor, Sami Lies Mouzai
-     * Code permanent : VICL12599701, MOUS27039501
      */
     @Override
     public void appliquerEffetType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte) {

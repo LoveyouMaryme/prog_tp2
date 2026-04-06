@@ -19,6 +19,7 @@ public class NouvelleEnergie extends CarteAttaque {
     /**
      * Construit une carte « Nouvelle énergie »
      * Augmente de 2 points d'attaque ceux du joueur courant
+     *
      * @param jc joueur courant, celui qui joue la carte
      * @param ja joueur adverse, celui qui ne joue pas la carte
      */
@@ -29,6 +30,7 @@ public class NouvelleEnergie extends CarteAttaque {
 
     /**
      * Applique les effets de premier type pour ce type précis de carte d'Attaque
+     *
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
      * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées
