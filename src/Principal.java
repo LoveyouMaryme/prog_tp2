@@ -2,7 +2,7 @@
 void main() {
 
     Scanner clavier = new Scanner(System.in);
-    System.out.println("Entrez le nom du fichier à traiter.");
+    System.out.println(Mssg.ENTREZ_NOM_FICHIER);
     String nomFichier = clavier.nextLine();
 
     File fichier = new File(nomFichier);
@@ -35,8 +35,17 @@ public static boolean chargerEtValider(File f, Joueur[] js, Deque<Carte> pile) {
             Joueur ja = js[1 - c.idJoueur];
 
             if (!c.verifier(jc, ja)) {
-                System.out.println("Jeu incorrect : a la ligne " + noLigne + ", le joueur "
-                        + jc.getId() + " n'a pas assez de ressources pour jouer \"" + c.getNom() + "\".");
+                String raisonEchec = c.getRaisonEchec();
+
+                StringBuilder sb = new StringBuilder();
+                sb.append(Mssg.JEU_INCORRECT).append(noLigne).append(Mssg.FIN_DE_PHRASE)
+                                .append(Mssg.JOUEUR_SIMPLE).append(jc.getId())
+                                .append(Mssg.PAS_ASSEZ_DE).append(raisonEchec)
+                                .append(Mssg.POUR_JOUER).append(Mssg.GUILLEMET)
+                                .append(c.getNom()).append(Mssg.GUILLEMET)
+                                .append(Mssg.FIN_DE_PHRASE);
+
+                System.out.println(sb);
                 return false;
             }
             c.appliquerDepot(jc);
@@ -61,7 +70,7 @@ public static Carte parserLigne(String ligne, int noLigne) {
     String[] parts = ligne.trim().split("\\s+"); // \\s+ pour si plusieurs espaces
 
     int id = Integer.parseInt(parts[0]);
-    if (id < 0 || id > 1) Erreur.NUMERO_DU_JOUEUR_INCORRECT.critique("Ligne " + noLigne);
+    if (id < 0 || id > 1) Erreur.NUMERO_DU_JOUEUR_INCORRECT.critique(Mssg.LIGNE_SIMPLE + noLigne);
 
     String nom = parts[1];
     Carte c = null;
@@ -79,9 +88,9 @@ public static Carte parserLigne(String ligne, int noLigne) {
 
         // La carte Trance
         case "Trance":
-            if (parts.length < 3) Erreur.CARTE_TRANCE.critique("Ligne " + noLigne);
+            if (parts.length < 3) Erreur.CARTE_TRANCE.critique(Mssg.LIGNE_SIMPLE + noLigne);
             int n = Integer.parseInt(parts[2]);
-            if (n < 0 || n > 4) Erreur.CARTE_TRANCE.critique("Ligne " + noLigne);
+            if (n < 0 || n > 4) Erreur.CARTE_TRANCE.critique(Mssg.LIGNE_SIMPLE + noLigne);
             c = new Trance(id, n);
             break;
 
@@ -100,13 +109,13 @@ public static Carte parserLigne(String ligne, int noLigne) {
         case "Vitesse":      c = new Vitesse(id); break;
 
         default:
-            Erreur.NOM_CARTE_INCORRECT.critique("Ligne " + noLigne + " : " + nom);
+            Erreur.NOM_CARTE_INCORRECT.critique(Mssg.LIGNE_SIMPLE + noLigne + " : " + nom);
     }
     return c;
 }
 
 public static void afficherScores(Joueur[] js) {
     for (Joueur j : js) {
-        System.out.println("Joueur " + j.getId() + " dommage " + j.d + " experience " + j.e);
+        System.out.println(Mssg.JOUEUR_SIMPLE + j.getId() + Mssg.DOMMAGE + j.d + Mssg.Experience + j.e);
     }
 }

@@ -4,6 +4,7 @@ public abstract class Carte {
 
     protected String nom;
     protected int idJoueur;
+    protected String raisonEchec = "";
 
     public boolean estAttaque() { return false; }
     public boolean estDommage() { return false; }
@@ -29,6 +30,10 @@ public abstract class Carte {
     public abstract void appliquerEffetType1(Joueur jc, Joueur ja);
 
     public abstract void appliquerEffetType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte);
+
+    public String getRaisonEchec() {
+        return raisonEchec;
+    }
 
 
 
