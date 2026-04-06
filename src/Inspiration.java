@@ -44,7 +44,7 @@ public class Inspiration extends Carte {
     }
 
     /**
-     * Applique les effets de premier type des cartes de type Inspiration :
+     * Applique les effets de premier type :
      * Augmente d'un point le nombre de cartes dans les mains du joueur courant.
      *
      * @param jc joueur courant, celui qui joue la carte
@@ -56,8 +56,8 @@ public class Inspiration extends Carte {
     }
 
     /**
-     * Applique les effets de deuxième type des cartes de type Inspiration :
-     * Augmente de un le nombre de carte riposte dans le paquet de cartes jouées
+     * Applique les effets de deuxième type :
+     * Augmente d'un point le nombre de cartes riposte dans le paquet de cartes jouées
      * et si la carte du dessous est une carte d'attaque, augmente l'expérience
      * du joueur courant de 1 point
      * @param joueurs   le tableau des deux joueurs

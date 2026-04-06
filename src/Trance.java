@@ -1,23 +1,61 @@
 import java.util.Deque;
 
-public class Trance extends CarteAttaque {
-    private int n; // Le nombre d'unités de transe (0 à 4)
 
+
+/**
+ * Représente la carte d'attaque « Trance ».
+ *
+ * Permet au joueur courant d'enlever de n cartes de ses mains
+ * supplémentaires de sa main.
+ */
+public class Trance extends CarteAttaque {
+    private int n; // Le nombre d'unités de trance (0 à 4)
+
+    /**
+     * Construit une carte « Trance »
+     *
+     * @param idJoueur ID du joueur qui l'utilise
+     * @param n
+     */
     public Trance(int idJoueur, int n) {
         super("Trance", idJoueur);
         this.n = n;
     }
 
+    /**
+     * Vérifie que le nombre de cartes en main
+     * est plus grand que le nombre de cartes en Trance
+     * et que le joueur a assez de point d'attaque
+     *
+     * @param jc joueur courant, celui qui joue la carte
+     * @param ja joueur adverse, celui qui ne joue pas la carte
+     * @return true si la carte peut être jouée, false sinon
+     */
     @Override
     public boolean verifier(Joueur jc, Joueur ja) {
         return jc.m > n && jc.a > 0;
     }
 
+    /**
+     * Applique les effets de premier type :
+     * retire n cartes supplémentaires de la main du joueur courant.
+     *
+     *
+     * @param jc joueur courant, celui qui joue la carte
+     * @param ja joueur adverse, celui qui ne joue pas la carte
+     */
     @Override
     public void appliquerEffetType1(Joueur jc, Joueur ja) {
         jc.m = jc.m - n;
     }
 
+    /**
+     * Applique les effets de deuxième type :
+     *
+     * @param joueurs   le tableau des deux joueurs
+     * @param pile      la pile de cartes jouées
+     * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées
+     */
     @Override
     public void appliquerEffetType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte) {
         // Aucun effet
