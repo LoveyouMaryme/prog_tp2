@@ -22,6 +22,17 @@ void main() {
 
 }
 
+/**
+ * Charge et valide un fichier des évènements du jeu.
+ *
+ * Parcourt chaque ligne du fichier, crée la carte correspondante,
+ * vérifie si le joueur peut la jouer, puis met la carte dans la pile
+ *
+ * @param f le fichier des évènements de jeu à analyser
+ * @param js les joueurs qui participent au jeu
+ * @param pile la pile de cartes validées à remplir à partir du fichier
+ * @return true si toutes les lignes du fichier ont été chargées et validées avec succès, false sinon
+ */
 public static boolean chargerEtValider(File f, Joueur[] js, Deque<Carte> pile) {
     boolean succes = true;
     int noLigne = 0;
@@ -66,6 +77,14 @@ public static void calculerResultats(Joueur[] joueurs, Deque<Carte> pile) {
     }
 }
 
+/**
+ * Valide le numéro du joueur et le nom de la carte,
+ * puis crée l'objet Carte correspondant.
+ *
+ * @param ligne : Une ligne du fichier de suite d'évènements à analyser
+ * @param noLigne : Le numéro de la ligne
+ * @return La carte représentée par la ligne
+ */
 public static Carte parserLigne(String ligne, int noLigne) {
     String[] parts = ligne.trim().split("\\s+"); // \\s+ pour si plusieurs espaces
 
