@@ -1,4 +1,10 @@
-
+/**
+ *
+ *  Interprète les résultats d’un jeu en analysant la suite d’événements du jeu.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
+ */
 void main() {
 
     Scanner clavier = new Scanner(System.in);

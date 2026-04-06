@@ -1,12 +1,13 @@
 import java.util.Deque;
 
-
-
 /**
  * Représente la carte d'attaque « Trance ».
  *
  * Permet au joueur courant d'enlever de n cartes de ses mains
  * supplémentaires de sa main.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class Trance extends CarteAttaque {
     private int n; // Le nombre d'unités de trance (0 à 4)

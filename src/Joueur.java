@@ -8,6 +8,9 @@
  *     <li>0 point de dommage reçu</li>
  *     <li>0 point d'expérience</li>
  * </ul>
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class Joueur {
 

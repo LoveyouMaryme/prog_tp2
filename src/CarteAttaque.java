@@ -4,6 +4,8 @@
  *  Définit les règles de vérification et d'application
  *  des cartes de type Attaque
  *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 
 public abstract class CarteAttaque extends Carte {
@@ -44,6 +46,7 @@ public abstract class CarteAttaque extends Carte {
     /**
      * Réduit d'un point le nombre de points d'attaque
      * restant du joueur courant
+     *
      * @param jc joueur courant, celui qui joue la carte
      */
 

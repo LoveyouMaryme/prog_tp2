@@ -5,7 +5,9 @@ import java.util.Deque;
  * Représente la carte d'attaque « Petit Voleur ».
  *
  * Diminue le nombre de cartes en main du joueur adverse
- * d'au plus trois cartes.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class PetitVoleur extends CarteAttaque {
     public PetitVoleur(int idJoueur) {

@@ -4,6 +4,9 @@ import java.util.Deque;
  * Représente une carte de type riposte « Vitesse »
  *
  * Double la carte du dessus de la pile de cartes déjà jouées
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class Vitesse extends CarteRiposte {
 

@@ -8,6 +8,9 @@ import java.util.Deque;
  *  <ul>Un de plus pour le joueur courant.</ul>
  *  <ul>Un de moins pour le joueur adverse.</ul>
  * </ol>
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class PetitePause extends CarteAttaque {
 

@@ -12,6 +12,9 @@ import java.util.Deque;
  * </ul>
  *  en définissant les opérations communes de vérification
  *  et d'application des effets.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public abstract class Carte {
 

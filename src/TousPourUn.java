@@ -37,6 +37,9 @@ public class TousPourUn extends CarteAttaque {
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
      * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées
+     *
+     * Auteur : Love-Mary Victor, Sami Lies Mouzai
+     * Code permanent : VICL12599701, MOUS27039501
      */
     @Override
     public void appliquerEffetType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte) {

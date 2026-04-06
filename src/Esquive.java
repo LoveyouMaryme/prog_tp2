@@ -4,6 +4,9 @@ import java.util.Deque;
  * Représente la carte de riposte « Esquive »
  *
  * Ajoute 1 au compteur de riposte et retire la carte au sommet de la pile.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class Esquive extends CarteRiposte {
 

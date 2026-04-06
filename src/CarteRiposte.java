@@ -5,6 +5,9 @@ import java.util.Deque;
  *
  *  Définit les règles de vérification et d'application
  *  des cartes de type Riposte
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public abstract class CarteRiposte extends Carte {
 

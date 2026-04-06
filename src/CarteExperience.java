@@ -6,6 +6,9 @@ import java.util.Deque;
  *
  *  Définit les règles de vérification et d'application
  *  des cartes de type Expérience
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public abstract class CarteExperience extends Carte {
     private int valeurXp;

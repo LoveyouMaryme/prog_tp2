@@ -6,6 +6,9 @@ import java.util.Deque;
  * Permet de piocher une carte supplémentaire et, en
  * deuxième type, peut donner de l'expérience si la
  * carte précédente est une attaque.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 
 public class Inspiration extends Carte {

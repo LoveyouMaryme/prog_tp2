@@ -2,6 +2,9 @@
 
 /**
  * Chaine de caractères contenant les textes de communication a l'utilisateur en francais.
+ *
+ * Auteur : Love-Mary Victor, Sami Lies Mouzai
+ * Code permanent : VICL12599701, MOUS27039501
  */
 public class Mssg {
     public static final String SEPARATEUR_MESSAGE = " : ";
