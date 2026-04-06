@@ -23,37 +23,37 @@ void main() {
 }
 
 public static boolean chargerEtValider(File f, Joueur[] js, Deque<Carte> pile) {
+    boolean succes = true;
     int noLigne = 0;
+
     try (Scanner sc = new Scanner(f)) {
-        while (sc.hasNextLine()) {
+        while (sc.hasNextLine() && succes) {
             noLigne++;
-            String ligne = sc.nextLine();
-            if (ligne.isEmpty()) continue;
+            String ligne = sc.nextLine().trim();
 
-            Carte c = parserLigne(ligne, noLigne); // Méthode pour créer la carte
-            Joueur jc = js[c.idJoueur];
-            Joueur ja = js[1 - c.idJoueur];
+            if (!ligne.isEmpty()) {
+                Carte c = parserLigne(ligne, noLigne);
+                Joueur jc = js[c.idJoueur];
+                Joueur ja = js[1 - c.idJoueur];
 
-            if (!c.verifier(jc, ja)) {
-                String raisonEchec = c.getRaisonEchec();
-
-                StringBuilder sb = new StringBuilder();
-                sb.append(Mssg.JEU_INCORRECT).append(noLigne).append(Mssg.FIN_DE_PHRASE)
-                                .append(Mssg.JOUEUR_SIMPLE).append(jc.getId())
-                                .append(Mssg.PAS_ASSEZ_DE).append(raisonEchec)
-                                .append(Mssg.POUR_JOUER).append(Mssg.GUILLEMET)
-                                .append(c.getNom()).append(Mssg.GUILLEMET)
-                                .append(Mssg.FIN_DE_PHRASE);
-
-                System.out.println(sb);
-                return false;
+                if (c.verifier(jc, ja)) {
+                    c.appliquerDepot(jc);
+                    c.appliquerEffetType1(jc, ja);
+                    pile.push(c);
+                } else {
+                    System.out.println(Mssg.JEU_INCORRECT + noLigne + Mssg.FIN_DE_PHRASE
+                            + Mssg.JOUEUR_SIMPLE + jc.getId() + Mssg.PAS_ASSEZ_DE
+                            + c.getRaisonEchec() + Mssg.POUR_JOUER + Mssg.GUILLEMET
+                            + c.getNom() + Mssg.GUILLEMET + Mssg.FIN_DE_PHRASE);
+                    succes = false;
+                }
             }
-            c.appliquerDepot(jc);
-            c.appliquerEffetType1(jc, ja);
-            pile.push(c);
         }
-    } catch (FileNotFoundException e) { return false; }
-    return true;
+    } catch (FileNotFoundException e) {
+        succes = false;
+    }
+
+    return succes;
 }
 
 public static void calculerResultats(Joueur[] joueurs, Deque<Carte> pile) {
