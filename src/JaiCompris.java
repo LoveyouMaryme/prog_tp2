@@ -1,7 +1,7 @@
 /**
- * Représente la carte de dommage « J'ai compris ».
+ * Représente la carte d'expérience « J'ai compris ».
  *
- * Octroie 2 points d'expérience au joueur
+ * Octroie 2 points d'expérience au joueur qui l.utilise
  */
 public class JaiCompris extends CarteExperience {
 
