@@ -7,6 +7,7 @@ public class CoupDroit extends CarteDommage {
 
     /**
      * Construit une carte Coup droit
+     *
      * @param idJoueur ID du joueur qui l'utilise
      */
     public CoupDroit(int idJoueur){
