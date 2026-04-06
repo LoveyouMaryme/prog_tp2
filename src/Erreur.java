@@ -19,6 +19,11 @@ public enum Erreur {
     private String mssg;
     private int no;
 
+    /**
+     * Construit un message d'erreur
+     * @param mssg message d'erreur
+     * @param no numero de l'erreur
+     */
     private Erreur( String mssg, int no ) {
         this.mssg = mssg;
         this.no = no;
@@ -50,8 +55,8 @@ public enum Erreur {
     }
 
     /**
-     * Affiche le message d'erreur.  Ensuite, le programme termine avec le code
-     * d'erreur du message.
+     * Affiche le message d'erreur.
+     * Ensuite, le programme termine avec le code d'erreur du message.
      */
     public void critique() {
         afficher();
