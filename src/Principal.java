@@ -67,6 +67,15 @@ public static boolean chargerEtValider(File f, Joueur[] js, Deque<Carte> pile) {
     return succes;
 }
 
+/**
+ * Calcule les résultats de la manche à partir de la pile de cartes.
+ *
+ * Dépile successivement les cartes de la pile et applique
+ * les effets de deuxième type sur les joueurs.
+ *
+ * @param joueurs le tableau des deux joueurs
+ * @param pile    la pile des cartes déjà jouées, à traiter en ordre inverse
+ */
 public static void calculerResultats(Joueur[] joueurs, Deque<Carte> pile) {
     int[] nbRiposte = {0};
 
@@ -78,6 +87,8 @@ public static void calculerResultats(Joueur[] joueurs, Deque<Carte> pile) {
 }
 
 /**
+ * Analyse chaque ligne du fichier des évènements du jeu
+ *
  * Valide le numéro du joueur et le nom de la carte,
  * puis crée l'objet Carte correspondant.
  *
@@ -133,6 +144,14 @@ public static Carte parserLigne(String ligne, int noLigne) {
     return c;
 }
 
+/**
+ * Affiche les scores des joueurs.
+ *
+ * Pour chaque joueur, affiche sur une ligne son identifiant,
+ * le dommage reçu et l'expérience obtenue.
+ *
+ * @param js Les deux joueurs de la partie
+ */
 public static void afficherScores(Joueur[] js) {
     for (Joueur j : js) {
         System.out.println(Mssg.JOUEUR_SIMPLE + j.getId() + Mssg.DOMMAGE + j.d + Mssg.Experience + j.e);
