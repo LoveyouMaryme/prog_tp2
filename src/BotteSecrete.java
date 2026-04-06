@@ -12,7 +12,7 @@ import java.util.Deque;
  * Code permanent : VICL12599701, MOUS27039501
  */
 
-public class BotteSecrete extends Carte {
+public class BotteSecrete extends CarteAttaque {
 
 
     /**
@@ -22,35 +22,6 @@ public class BotteSecrete extends Carte {
      */
     public BotteSecrete(int idJoueur) {
         super("BotteSecrete", idJoueur);
-    }
-
-
-    /**
-     * Vérifie plusieurs conditions :
-     * <ul>
-     *   <li>le joueur courant a au moins une carte en main</li>
-     *   <li>le joueur courant a assez de points d'attaque</li>
-     * </ul>
-     *
-     * @param jc joueur courant, celui qui joue la carte
-     * @param ja joueur adverse, celui qui ne joue pas la carte
-     * @return true si la carte peut être jouée, false sinon
-     */
-    @Override
-    public boolean verifier(Joueur jc, Joueur ja) {
-        return jc.m > 0 && jc.a > 0;
-    }
-
-    /**
-     * Réduit d'un point le nombre de points d'attaque
-     * restant du joueur.
-     *
-     * @param jc le joueur courant, celui qui joue la carte
-     */
-    @Override
-    public void appliquerDepot(Joueur jc) {
-        super.appliquerDepot(jc);
-        jc.a--; // Coûte 1pts d'attaque
     }
 
     /**

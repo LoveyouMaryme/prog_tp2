@@ -1,7 +1,7 @@
 import java.util.Deque;
 
 /**
- * Représente l'abstraction d'une Carte Inspiration du jeu.
+ * Représente une Carte Inspiration du jeu.
  *
  * Permet de piocher une carte supplémentaire et, en
  * deuxième type, peut donner de l'expérience si la
@@ -11,39 +11,15 @@ import java.util.Deque;
  * Code permanent : VICL12599701, MOUS27039501
  */
 
-public class Inspiration extends Carte {
+public class Inspiration extends CarteRiposte {
 
     /**
-     * Construit une carte de type Dommage
+     * Construit une carte Inspiration
      *
      * @param idJoueur Id du joueur qui utilise cette carte
      */
     public Inspiration(int idJoueur) {
         super("Inspiration", idJoueur);
-    }
-
-    /**
-     * Vérifie plusieurs conditions :
-     * <ul>
-     *   <li>le joueur courant a au moins une carte en main</li>
-     * </ul>
-     *
-     * @param jc joueur courant, celui qui joue la carte
-     * @param ja joueur adverse, celui qui ne joue pas la carte
-     * @return true si la carte peut être jouée, false sinon
-     */
-    @Override
-    public boolean verifier(Joueur jc, Joueur ja) {
-        return jc.m > 0;
-    }
-
-    /**
-     * Retire une carte jouée dans la main du joueur courant
-     * @param jc joueur courant, celui qui joue la carte
-     */
-    @Override
-    public void appliquerDepot(Joueur jc) {
-        super.appliquerDepot(jc);
     }
 
     /**
@@ -59,19 +35,16 @@ public class Inspiration extends Carte {
     }
 
     /**
-     * Applique les effets de deuxième type :
-     * Augmente d'un point le nombre de cartes riposte dans le paquet de cartes jouées
-     * et si la carte du dessous est une carte d'attaque, augmente l'expérience
-     * du joueur courant de 1 point
+     * Applique l'effet spécifique de deuxième type :
+     * si la carte au sommet de la pile est une attaque,
+     * augmente l'expérience du joueur courant de 1 point.
+     *
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
-     * @param nbRiposte compteur du nombre de cartes de riposte déjà jouées
+     * @param nbRiposte compteur du nombre de cartes de riposte déjà rencontrées
      */
     @Override
-    public void appliquerEffetType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte) {
-        nbRiposte[0]++;
-
-        //vérifie si la carte en dessous est une carte d'Attaque
+    public void appliquerEffetSpecifiqueType2(Joueur[] joueurs, Deque<Carte> pile, int[] nbRiposte) {
         if (!pile.isEmpty() && pile.peek().estAttaque()) {
             joueurs[this.idJoueur].e += 1;
         }

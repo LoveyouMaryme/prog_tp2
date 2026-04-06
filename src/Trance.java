@@ -3,7 +3,7 @@ import java.util.Deque;
 /**
  * Représente la carte d'attaque « Trance ».
  *
- * Permet au joueur courant d'enlever de n cartes de ses mains
+ * Permet au joueur courant d'enlever n cartes de ses mains
  * supplémentaires de sa main.
  *
  * Auteur : Love-Mary Victor, Sami Lies Mouzai
@@ -16,7 +16,7 @@ public class Trance extends CarteAttaque {
      * Construit une carte « Trance »
      *
      * @param idJoueur ID du joueur qui l'utilise
-     * @param n
+     * @param n le nombre de cartes supplémentaires à retirer (entre 0 et 4)
      */
     public Trance(int idJoueur, int n) {
         super("Trance", idJoueur);
@@ -34,7 +34,15 @@ public class Trance extends CarteAttaque {
      */
     @Override
     public boolean verifier(Joueur jc, Joueur ja) {
-        return jc.m > n && jc.a > 0;
+        boolean valide = true;
+        if (jc.m <= n) {
+            this.raisonEchec = Mssg.CARTES_MAIN;
+            valide = false;
+        } else if (jc.a <= 0) {
+            this.raisonEchec = Mssg.POINT_ATTAQUE;
+            valide = false;
+        }
+        return valide;
     }
 
     /**
@@ -51,7 +59,7 @@ public class Trance extends CarteAttaque {
     }
 
     /**
-     * Applique les effets de deuxième type :
+     * Applique les effets de deuxième type : Aucun effet pour cette carte
      *
      * @param joueurs   le tableau des deux joueurs
      * @param pile      la pile de cartes jouées
